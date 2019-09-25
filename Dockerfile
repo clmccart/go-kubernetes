@@ -6,4 +6,4 @@ COPY . /goapp
 
 EXPOSE 80
 
-RUN go run goapp.go
+CMD ["go", "run", "goapp.go"]
