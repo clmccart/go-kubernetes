@@ -1,9 +1,11 @@
 FROM golang:latest
 
-WORKDIR /goapp
+RUN mkdir /app
 
-COPY . /goapp
+ADD . /app/
 
-EXPOSE 80
+WORKDIR /app
 
-CMD ["go", "run", "goapp.go"]
+RUN go build -o main .
+
+CMD ["/app/main"]
