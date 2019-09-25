@@ -11,11 +11,13 @@ spec:
     spec:
       containers:
       - name: my-api
-        image: clmgoregistry.azurecr.io/mygoapp:v2
+        image: clmgoregistry.azurecr.io/leggo:1.0
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
         ports:
         - containerPort: 80
       imagePullSecrets:
-      - name: dockreg
+      - name: mysecret
 ---
 apiVersion: v1
 kind: Service
