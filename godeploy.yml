@@ -11,11 +11,11 @@ spec:
     spec:
       containers:
       - name: my-api
-        image: clmgoregistry.azurecr.io/mygoapp:v1
+        image: clmgoregistry.azurecr.io/mygoapp:v2
         ports:
         - containerPort: 80
       imagePullSecrets:
-      - name: registrysecret
+      - name: dockreg
 ---
 apiVersion: v1
 kind: Service
